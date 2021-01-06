@@ -46,7 +46,7 @@ def is_word(word_list, word):
 
 def get_story_string():
     """
-    Returns: a joke in encrypted text.
+    Returns: Encrypted text to be deciphered.
     """
     f = open("story.txt", "r")
     story = str(f.read())
@@ -73,16 +73,12 @@ class Message(object):
 
     def get_message_text(self):
         '''
-        Used to safely access self.message_text outside of the class
-
         Returns: self.message_text
         '''
         return self.message_text
 
     def get_valid_words(self):
         '''
-        Used to safely access a copy of self.valid_words outside of the class
-
         Returns: a COPY of self.valid_words
         '''
         return self.valid_words[:]
@@ -122,7 +118,7 @@ class Message(object):
 
     def apply_shift(self, shift):
         '''
-        Applies the Caesar Cipher to self.message_text with the input shift.
+        Applies the Caesar Shift to self.message_text with the input shift.
         Creates a new string that is self.message_text shifted down the
         alphabet by some number of characters determined by the input shift
 
@@ -160,8 +156,6 @@ class PlaintextMessage(Message):
             self.encrypting_dict (dictionary, built using shift)
             self.message_text_encrypted (string, created using shift)
 
-        Hint: consider using the parent class constructor so less
-        code is repeated
         '''
         Message.__init__(self, text)
         self.shift = shift
@@ -169,24 +163,18 @@ class PlaintextMessage(Message):
 
     def get_shift(self):
         '''
-        Used to safely access self.shift outside of the class
-
         Returns: self.shift
         '''
         return self.shift
 
     def get_encrypting_dict(self):
         '''
-        Used to safely access a copy self.encrypting_dict outside of the class
-
         Returns: a COPY of self.encrypting_dict
         '''
         return self.encrypting_dict.copy()
 
     def get_message_text_encrypted(self):
         '''
-        Used to safely access self.message_text_encrypted outside of the class
-
         Returns: self.message_text_encrypted
         '''
         encryptedMessage = self.apply_shift(self.shift)
@@ -220,7 +208,6 @@ class CiphertextMessage(Message):
             self.valid_words (list, determined using helper function load_words)
         '''
         Message.__init__(self, text)
-        self.valid_words = load_words(WORDLIST_FILENAME)
 
     def decrypt_message(self):
         '''
@@ -230,10 +217,6 @@ class CiphertextMessage(Message):
         on the message text. If s is the original shift value used to encrypt
         the message, then we would expect 26 - s to be the best shift value
         for decrypting it.
-
-        Note: if multiple shifts are  equally good such that they all create
-        the maximum number of you may choose any of those shifts (and their
-        corresponding decrypted messages) to return
 
         Returns: a tuple of the best shift value used to decrypt the message
         and the decrypted message text using that shift value
@@ -264,5 +247,5 @@ def decrypt_story():
 
 
 if __name__ == '__main__':
-    a = decrypt_story()
-    print(f'\nDecryption key: {a[0]}\nDecrypted message: {a[1]}')
+    message = decrypt_story()
+    print(f'\nDecryption Key: {message[0]}\nDecrypted Text: {message[1]}')
