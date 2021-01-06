@@ -1,7 +1,4 @@
 import string
-from itertools import cycle
-
-### DO NOT MODIFY THIS FUNCTION ###
 
 
 def load_words(file_name):
@@ -26,9 +23,6 @@ def load_words(file_name):
     return word_list
 
 
-### DO NOT MODIFY THIS FUNCTION ###
-
-
 def is_word(word_list, word):
     '''
     Determines if word is a valid word, ignoring
@@ -50,9 +44,6 @@ def is_word(word_list, word):
     return word in word_list
 
 
-### DO NOT MODIFY THIS FUNCTION ###
-
-
 def get_story_string():
     """
     Returns: a joke in encrypted text.
@@ -67,7 +58,6 @@ WORDLIST_FILENAME = 'words.txt'
 
 
 class Message(object):
-    ### DO NOT MODIFY THIS METHOD ###
     def __init__(self, text):
         '''
         Initializes a Message object
@@ -81,7 +71,6 @@ class Message(object):
         self.message_text = text
         self.valid_words = load_words(WORDLIST_FILENAME)
 
-    ### DO NOT MODIFY THIS METHOD ###
     def get_message_text(self):
         '''
         Used to safely access self.message_text outside of the class
@@ -90,7 +79,6 @@ class Message(object):
         '''
         return self.message_text
 
-    ### DO NOT MODIFY THIS METHOD ###
     def get_valid_words(self):
         '''
         Used to safely access a copy of self.valid_words outside of the class
@@ -267,11 +255,7 @@ class CiphertextMessage(Message):
             best = max_i
         else:
             best = 0
-        return (best, decryptedText)
-
-
-# my_message = CiphertextMessage("B pbee ghm fbll mribgz 'Iextlx kxtw max ibggxw ihlm tm max mhi hy max uhtkw'...")
-# print(my_message.decrypt_message())
+        return best, decryptedText
 
 
 def decrypt_story():
@@ -279,10 +263,6 @@ def decrypt_story():
     return my_message.decrypt_message()
 
 
-# message = PlaintextMessage("Hello world!", 7)
-
-# print(message.get_message_text_encrypted())
-
 if __name__ == '__main__':
     a = decrypt_story()
-    print(f'Decrypted message: {a[1]}')
+    print(f'\nDecryption key: {a[0]}\nDecrypted message: {a[1]}')
