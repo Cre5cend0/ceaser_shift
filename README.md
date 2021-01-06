@@ -34,13 +34,4 @@ We will treat uppercase and lowercase letters individually, so that uppercase le
 | 'abcdef'        |    2      |  'cdefgh'        |
 | 'Hello, World!' |    5      |  'Mjqqt, Btwqi!' |
 | ''              | any value |  ''              |
-We implemented for you two helper functions: load_words and is_word. You may use these in your solution and you do not need to understand them completely, but should read the associated comments. You should read and understand the helper code in the rest of the file and use it to guide your solutions.
 
-Getting Started
-
-To get started, download the ps6.zip file. Extract it to your working directory. The files inside are:
-
-ps6.py - a file containing three classes that you will have to implement.
-words.txt - a file containing valid English words (should be in the same folder as your ps6..py file).
-story.txt - a file containing an encrypted message that you will have to decode (should be in the same folder as your ps6..py file).
-This will be your first experience coding with classes! We will have a Message class with two subclasses PlaintextMessage and CiphertextMessage .
