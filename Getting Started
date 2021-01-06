@@ -1,0 +1,14 @@
+To get started, download the file. Extract it to your working directory. The files inside are:
+
+main.py - a file containing classes to encrpy or decrypt message
+words.txt - a file containing valid English words (should be in the same folder as your main.py file). 
+story.txt - a file containing an encrypted message that you will have to decode (should be in the same folder as your main.py file).
+
+###
+You can Encrpypt a message using the following:
+
+message = PlaintextMessage("Your text message to be encrypted", key)
+print(message.get_message_text_encrypted())
+
+###
+To Decrypt a message, copy your encrypted message into story.txt and run main.py
