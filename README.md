@@ -9,14 +9,13 @@ A cipher usually depends on a piece of auxiliary information, called a key. The 
 
 Some vocabulary to get you started:
 
-Encryption - the process of obscuring or encoding messages to make them unreadable until they are decrypted
-Decryption - making encrypted messages readable again by decoding them
-Cipher - algorithm for performing encryption and decryption
-Plaintext - the original message
-Ciphertext - the encrypted message. Note: a ciphertext still contains all of the original message information, even if it looks like gibberish.
-The Caesar Cipher
+- Encryption - the process of obscuring or encoding messages to make them unreadable until they are decrypted
+- Decryption - making encrypted messages readable again by decoding them
+- Cipher - algorithm for performing encryption and decryption
+- Plaintext - the original message
+- Ciphertext - the encrypted message. Note: a ciphertext still contains all of the original message information, even if it looks like gibberish.
 
-The idea of the Caesar Cipher is to pick an integer and shift every letter of your message by that integer. In other words, suppose the shift is k . Then, all instances of the i-th letter of the alphabet that appear in the plaintext should become the (i+k)-th letter of the alphabet in the ciphertext.
+The idea of the Ceaser Shift is to pick an integer and shift every letter of your message by that integer. In other words, suppose the shift is k . Then, all instances of the i-th letter of the alphabet that appear in the plaintext should become the (i+k)-th letter of the alphabet in the ciphertext.
 
 We will treat uppercase and lowercase letters individually, so that uppercase letters are always mapped to an uppercase letter, and lowercase letters are always mapped to a lowercase letter. If an uppercase letter maps to "A", then the same lowercase letter should map to "a". Punctuation and spaces should be retained and not changed. For example, a plaintext message with a comma should have a corresponding ciphertext with a comma in the same position.
 
