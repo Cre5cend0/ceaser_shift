@@ -5,10 +5,11 @@ words.txt - a file containing valid English words (should be in the same folder 
 story.txt - a file containing an encrypted message that you will have to decode (should be in the same folder as your main.py file).
 
 ###
-You can Encrypt a message using the following:
+To Encrypt a message, you need to run this in main.py
 
-message = PlaintextMessage("Your text message to be encrypted", key) # replace key with a number < 26
+message = PlaintextMessage("Your text message to be encrypted", key) # replace _key_ with a number < 26
 print(message.get_message_text_encrypted())
 
 ###
 To Decrypt a message, copy your encrypted message into story.txt and run main.py
+I have already left an encrypted message in there for you to decrypt
