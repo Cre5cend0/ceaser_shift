@@ -1,5 +1,5 @@
 # Ceaser Shift
-In cryptography, Caesar shift or also known as a Caesar cipher, Caesar's cipher, the shift cipher, or Caesar's code, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
+In cryptography, Caesar shift or also known as a Caesar cipher, Caesar's cipher, the shift cipher, or Caesar's code, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. The only catch is, one can only decrypt it if they know the number of fixed positions it was replaced by. This program finds the _key_ for you and returns the decrypted text.
 
 Encryption is the process of obscuring information to make it unreadable without special knowledge. For centuries, people have devised schemes to encrypt messages - some better than others - but the advent of the computer and the Internet revolutionized the field. These days, it's hard not to encounter some sort of encryption, whether you are buying something online or logging into a shared computer system. Encryption lets you share information with other trusted people, without fear of disclosure.
 
