@@ -18,7 +18,7 @@ def load_words(file_name):
     line = in_file.readline()
     # word_list: list of strings
     word_list = line.split()
-    print('  ', len(word_list), 'words loaded.')
+    print('   ', len(word_list), 'words loaded.')
     in_file.close()
     return word_list
 
@@ -34,10 +34,8 @@ def is_word(word_list, word):
     Returns: True if word is in word_list, False otherwise
 
     Example:
-    >>> is_word(word_list, 'bat') returns
-    True
-    >>> is_word(word_list, 'asdf') returns
-    False
+    >>> is_word(word_list, 'bat') -> bool True
+    >>> is_word(word_list, 'asdf') -> bool False
     '''
     word = word.lower()
     word = word.strip(" !@#$%^&*()-_+={}[]|\:;'<>?,./\"")
@@ -212,7 +210,7 @@ class CiphertextMessage(Message):
     def decrypt_message(self):
         '''
         Decrypt self.message_text by trying every possible shift value
-        and find the "best" one. We will define "best" as the shift that
+        and find the "best" one. "best" is defined as the shift that
         creates the maximum number of real words when we use apply_shift(shift)
         on the message text. If s is the original shift value used to encrypt
         the message, then we would expect 26 - s to be the best shift value
@@ -229,8 +227,7 @@ class CiphertextMessage(Message):
             for word in all_words:
                 if is_word(self.valid_words, word):
                     count += 1
-                else:
-                    continue
+                continue
             count_list.append(count)
         max_i = 26 - count_list.index(max(count_list))
         decryptedText = self.apply_shift(max_i)
@@ -248,4 +245,4 @@ def decrypt_story():
 
 if __name__ == '__main__':
     message = decrypt_story()
-    print(f'\nDecryption Key: {message[0]}\nDecrypted Text: {message[1]}')
+    print(f"\nBest Shift Value: {message[0]}\n    Text: {message[1]}")
